@@ -1,5 +1,5 @@
-1. Packages
-===========
+1 Packages
+==========
 
 For our prediction analysis, we are going to use following packages.
 
@@ -10,8 +10,8 @@ library("rattle")
 library("randomForest")
 ```
 
-2. Data Loading
-===============
+2 Data Loading
+==============
 
 After puting the data source into your work directory, run the following to load them
 
@@ -20,8 +20,8 @@ pml.training <- read.csv("pml-training.csv")
 pml.testing <- read.csv("pml-testing.csv")
 ```
 
-3. Validation data
-==================
+3 Validation data
+=================
 
 To further testing our model building, I will split 20% of the training data into validation data. Setting the seed to 1234, so we can reproduce the process
 
@@ -32,8 +32,8 @@ pml.training.sub <- pml.training[inTrain,]
 pml.training.val <- pml.training[-inTrain,]
 ```
 
-4. Data Cleaning
-================
+4 Data Cleaning
+===============
 
 After looking at the data set, I find out that quite a lot of the variables have many NAs or blank values. Because I don't want to lose many records. So I will just remove variables with many NAs or Blank values. The following is my algorihtm that will help me do that.
 
@@ -76,8 +76,8 @@ pml.training.sub.cl2 <- pml.training.sub.cl[c(-1,-2, -3,-4,-5,-6,-7)]
 pml.training.val.cl2 <- pml.training.val.cl[c(-1,-2, -3,-4,-5,-6,-7)]
 ```
 
-5. Model Fitting
-================
+5 Model Fitting
+===============
 
 After gettting the data set that I want, I then come to the stage to fit my model. I am going to use two methods to fit the data. One is decision tree and the other one is random forest.
 
